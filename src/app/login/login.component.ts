@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 /** @title Form field with error messages */
 @Component({
@@ -10,7 +12,7 @@ import {FormControl, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit{
 
   email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required]);
+  password = String;
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -23,8 +25,12 @@ export class LoginComponent implements OnInit{
   ngOnInit(){
 
   }
-  constructor(){
+  constructor(private router : Router){
 
   }
-
+  login()
+  {
+    this.router.navigate(['']);
+  }
+ 
 }
