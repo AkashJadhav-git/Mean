@@ -10,6 +10,8 @@ import { JobsModule } from './jobs/jobs.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import{AccumulationChartModule} from '@syncfusion/ej2-angular-charts'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     VpMaterialModule,
     JobsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AccumulationChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
