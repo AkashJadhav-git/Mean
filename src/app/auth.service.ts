@@ -12,5 +12,8 @@ export class AuthService {
   {
       return of({email, password});
   }
-
+  register(fullname:String, email:String, phone:String, password:String)
+  {
+      return of({fullname, email, phone, password});
+  }
 }
