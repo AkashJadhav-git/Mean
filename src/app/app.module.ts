@@ -7,18 +7,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VpMaterialModule } from './material-module';
 import { HomeComponent } from './home/home.component';
 import { JobsModule } from './jobs/jobs.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     VpMaterialModule,
-    JobsModule
+    JobsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
