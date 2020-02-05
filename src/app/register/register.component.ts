@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
    }
    register()
    {
-     this.authService.register(this.fullname, this.emailFormControl, this.phone, this.password).subscribe(s=> this.router.navigate(['/login']));
+     this.authService.register(this.fullname, this.phone, this.password).subscribe(s=> this.router.navigate(['/login']));
    }
 
   ngOnInit() {
