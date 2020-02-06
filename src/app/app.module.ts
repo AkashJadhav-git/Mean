@@ -10,6 +10,7 @@ import { JobsModule } from './jobs/jobs.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { RegisterComponent } from './register/register.component';
     JobsModule,
     FormsModule,
     ReactiveFormsModule,
-
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
