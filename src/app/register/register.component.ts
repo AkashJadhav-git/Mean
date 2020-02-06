@@ -10,18 +10,24 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  userForm = new FormGroup({
+  userGroup = new FormGroup({
     fullname: new FormControl( [Validators.required]),
     email : new FormControl([Validators.required, Validators.email]),
-    
+    password : new FormControl([Validators.required])
   })
 
-  getErrorMessage() {
-    return this.userForm.hasError('required') ? 'You must enter a value' :
-        this.userForm.hasError('email') ? 'Not a valid email' :
-            '';
+  constructor(private router : Router, private authservice : AuthService){
+
+        console.log('userform', this.userGroup);
   }
 
+  register()
+  {
+        const user = this.userGroup.getRawValue();
+
+        this.authservice.register(user).subscribe(s=>this.router.navigate(['/login']));
+
+  }
   ngOnInit() {
   }
 

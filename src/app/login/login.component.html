@@ -1,27 +1,30 @@
 <mat-card class="login-card">
-    <mat-card-header>
-        <mat-card-title>Sign In</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form>
-        <div class="example-container">
-            <mat-form-field>
-              <input matInput placeholder="Enter your email" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="example-container">
-            <mat-form-field>
-              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-            </div>
-        </form>
-    </mat-card-content>
-    <mat-card-actions align="center">
-        <button mat-raised-button color="primary" (click)="login()">Sign IN</button>
-    </mat-card-actions>
-   <span>If don't have account?<a [routerLink]="['/register']">Register</a>Here.</span>
+  <mat-card-header>
+    <mat-card-title>
+      Log In
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <table align="center">
+      <tr><td>
+        <mat-form-field>
+          <input matInput name="email" placeholder="Enter the email" [(ngModel)]="email" required/>
+        </mat-form-field>
+      </td></tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput name="password" placeholder="Enter the password" [(ngModel)]="password" required/>
+          </mat-form-field>
+        </td>
+      </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align ="center">
+    <button mat-raised-button color="primary" (click)="login()">Log In</button>
+  </mat-card-actions>
+  <span>If don't have account <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>Click Here</span>
+
 </mat-card>

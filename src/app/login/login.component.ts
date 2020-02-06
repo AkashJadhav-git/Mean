@@ -11,26 +11,18 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit{
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = String;
-
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
+  email : String;
+  password : String;
  
-  hide = true;
-  
   ngOnInit(){
 
   }
-  constructor(private router : Router){
+  constructor(private router : Router, private authService : AuthService){
 
   }
   login()
   {
-    this.router.navigate(['']);
+      this.authService.login(this.email, this.password).subscribe(s=>this.router.navigate(['']));
   }
  
 }
