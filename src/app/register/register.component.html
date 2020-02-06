@@ -1,45 +1,21 @@
 <mat-card class="register">
-        <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form>
-                <div class='example-container'>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Full Name" name='fullname'  required>
-                </mat-form-field>
-                </div>
-                <div class='example-container'>
-                    <mat-form-field>
-                        <input matInput placeholder="Email" name="email" [formControl]="emailFormControl" required>
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                          Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                          Email is <strong>required</strong>
-                        </mat-error>
-                      </mat-form-field>
-                </div>
-                <div class='example-form'>
-                    <mat-form-field>
-                        <span matPrefix>+91 &nbsp;</span>
-                        <input type="tel" matInput name="phone" placeholder="Contact Number" required>
-                        <mat-icon matSuffix>mode_edit</mat-icon>
-                      </mat-form-field>
-                </div>
-                <div class="example-container">
-                    <mat-form-field>
-                      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
-                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                      </button>
-                    </mat-form-field>
-                    </div>
-            </form>
-        </mat-card-content>
-        <mat-card-actions align="center">
-            <button mat-raised-button color="primary" (click)="register()">Submit</button>
-            <button mat-raised-button color="primary" routerLink = '/login' routerLinkActive = 'active'>Back</button>
-        </mat-card-actions>
-    
+  <mat-card-header>
+    <mat-card-title>Register Yourself</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="userGroup">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter Username" name="username" formControlName="fullname" required>
+        </mat-form-field>
+      </div>
+      <div class="email-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" formControlName="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+        
+    </form>
+  </mat-card-content>
 </mat-card>

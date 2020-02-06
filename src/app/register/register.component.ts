@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -10,23 +10,17 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  fullname : String;
-  phone : String;
-  password : String;
+  userForm = new FormGroup({
+    fullname: new FormControl( [Validators.required]),
+    email : new FormControl([Validators.required, Validators.email]),
+    
+  })
 
-  hide = true;
-  
-  constructor(private router : Router, private authService : AuthService) {
-        
-   }
-   register()
-   {
-     this.authService.register(this.fullname, this.phone, this.password).subscribe(s=> this.router.navigate(['/login']));
-   }
+  getErrorMessage() {
+    return this.userForm.hasError('required') ? 'You must enter a value' :
+        this.userForm.hasError('email') ? 'Not a valid email' :
+            '';
+  }
 
   ngOnInit() {
   }
