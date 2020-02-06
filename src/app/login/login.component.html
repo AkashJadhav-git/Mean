@@ -6,16 +6,16 @@
   </mat-card-header>
   <mat-card-content>
     <form>
-      <table align="center">
+      <table class="fullwidth">
       <tr><td>
-        <mat-form-field>
+        <mat-form-field class="fullwidth">
           <input matInput name="email" placeholder="Enter the email" [(ngModel)]="email" required/>
         </mat-form-field>
       </td></tr>
       <tr>
         <td>
-          <mat-form-field>
-            <input matInput name="password" placeholder="Enter the password" [(ngModel)]="password" required/>
+          <mat-form-field class="fullwidth">
+            <input matInput name="password" type="password" placeholder="Enter the password" [(ngModel)]="password" required/>
           </mat-form-field>
         </td>
       </tr>
@@ -26,5 +26,4 @@
     <button mat-raised-button color="primary" (click)="login()">Log In</button>
   </mat-card-actions>
   <span>If don't have account <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>Click Here</span>
-
 </mat-card>

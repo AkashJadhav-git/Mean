@@ -11,4 +11,11 @@ mat-typography-config(
 
 body{
     background-color : #f4f3f3;
+    margin :0;
+    pm-root * {
+            font-family: 'Exo', sans-serif;
+    }
+}
+.left-spacer{
+    margin-left: 2%;
 }
