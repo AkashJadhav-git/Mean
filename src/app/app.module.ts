@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { AdminhomeModule } from './adminhome/adminhome.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

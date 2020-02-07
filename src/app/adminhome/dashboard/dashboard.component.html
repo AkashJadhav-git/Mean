@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+
+<div class='chart'>
+<ejs-accumulationchart [title]='chartTitle' [tooltip]='tooltip'>
+    <e-accumulation-series-collection>
+        <e-accumulation-series innerRadius = '40%' type="Pie" [dataSource]='data' xName='name' yName='value' [dataLabel]='chartLabel'>
+
+        </e-accumulation-series>
+    </e-accumulation-series-collection>
+</ejs-accumulationchart>
+</div>
