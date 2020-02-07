@@ -20,6 +20,11 @@ const routes: Routes = [
     component : RegisterComponent
   },
   {
+    path : 'adminhome',
+    pathMatch : 'full',
+    loadChildren : './adminhome/adminhome.module#AdminhomeModule'
+  },
+  {
   path : 'jobs',
   pathMatch : 'full',
   loadChildren : './jobs/jobs.module#JobsModule'

@@ -10,6 +10,7 @@ import { JobsModule } from './jobs/jobs.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { AdminhomeModule } from './adminhome/adminhome.module';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { RegisterComponent } from './register/register.component';
     JobsModule,
     FormsModule,
     ReactiveFormsModule,
-  
+    AdminhomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
