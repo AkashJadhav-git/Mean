@@ -1,14 +1,17 @@
-users = [];
+const bcrypt = require('bcrypt');
+const User = require('../models/user.model');
 
 async function insert(user){
 
-// make a mongoose db call to save user in db
+    user.hashedPassword = bcrypt.hashSync(user.password, 10);
+    delete user.password;
 
+// make a mongoose db call to save user in db
     console.log(`saving user to DB`, user);
-    users.push(user);
-    return user;
+    return await new User(user).save();
+    
 }
 
 module.exports = {
     insert
-}
+};

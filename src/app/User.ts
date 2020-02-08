@@ -3,4 +3,5 @@ export interface User {
   fullname: string;
   password: string;
   repeatpassword: string;
+  roles?: any[];
 }
