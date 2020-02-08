@@ -18,7 +18,6 @@ import { AdminhomeModule } from './adminhome/adminhome.module';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    
   ],
   imports: [
     BrowserModule,

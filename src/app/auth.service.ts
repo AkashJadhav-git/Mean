@@ -8,35 +8,32 @@ import { User } from './User';
 
 export class AuthService {
 
- private user$ = new Subject<User>();
+  private user$ = new Subject<User>();
   constructor() { }
 
-  login(email : String, password : String)
-  {
-      return of({email, password});
+  login(email: string, password: string) {
+    return of({ email, password });
   }
 
-  logout()
-  {
+  logout() {
     this.setUser(null);
-    const [routerLink]="['/login']", routerLinkActive="router-link-active";
+    // const [routerLink] = "['/login']", routerLinkActive = 'router-link-active';
     console.log('logged out.');
   }
 
-  get user(){
+  get user() {
 
     return this.user$.asObservable();
   }
 
-  register(user : any)
-  {
+  register(user: any) {
     // make api call to save in db and update the user subject.
-     this.setUser(user);    
-     console.log('Registered user successfully', user);
-      return of(user);
+    this.setUser(user);
+    console.log('Registered user successfully', user);
+    return of(user);
   }
 
-  private setUser(user){
+  private setUser(user) {
     this.user$.next(user);
   }
 

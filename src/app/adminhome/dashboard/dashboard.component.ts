@@ -10,31 +10,31 @@ import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 })
 export class DashboardComponent implements OnInit {
 
-  public data:Object[];
-  public chartTitle : String;
-  public chartLabel : Object;
-  public tooltip : object;
+  public data: object[];
+  public chartTitle: string;
+  public chartLabel: object;
+  public tooltip: object;
 
-  constructor() { 
-    this.chartTitle = 'Placements Engineering Departmentwise'
+  constructor() {
+    this.chartTitle = 'Placements Engineering Departmentwise';
     this.data = [
-      {name : 'Compueter', value : 37, text : '37%'},
-      {name : 'Mechanical', value : 17, text : '17%'},
-      {name : 'Civil', value : 19, text : '19%'},
-      {name : 'Elecrical', value : 4, text : '4%'},
-      {name : 'EXTC', value : 11, text : '11%'},
-      {name : 'Others', value : 12, text : '12%'}
+      { name: 'Compueter', value: 37, text: '37%' },
+      { name: 'Mechanical', value: 17, text: '17%' },
+      { name: 'Civil', value: 19, text: '19%' },
+      { name: 'Elecrical', value: 4, text: '4%' },
+      { name: 'EXTC', value: 11, text: '11%' },
+      { name: 'Others', value: 12, text: '12%' }
 
     ];
     this.chartLabel = {
-      visible : true,
-      position : 'Inside',
-      name : 'text'
-    }
+      visible: true,
+      position: 'Inside',
+      name: 'text'
+    };
     this.tooltip = {
-     enable : true,
-     format : '${point.x} : <b>${point.y}%</b>'
-    }
+      enable: true,
+      format: '${point.x} : <b>${point.y}%</b>'
+    };
   }
 
   ngOnInit() {
