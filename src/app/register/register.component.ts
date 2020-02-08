@@ -10,46 +10,52 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  userGroup = new FormGroup({
-    fullname: new FormControl([Validators.required]),
-    email: new FormControl([Validators.required, Validators.email]),
-    password: new FormControl([Validators.required]),
-    repeatpassword: new FormControl([Validators.required, this.passwordMatch])
+  userForm = new FormGroup({
+    fullname: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+    repeatPassword: new FormControl('', [
+      Validators.required,
+      this.passwordsMatch
+    ])
   });
-  passwordMatch(control: FormControl) {
+  constructor(private router: Router, private authService: AuthService) {
+    console.log('userform', this.userForm);
+  }
 
+  passwordsMatch(control: FormControl) {
     const password = control.root.get('password');
-    return password && control.value !== password.value ?
-      {
+    return password && control.value !== password.value
+      ? {
         passwordMatch: true
       }
       : null;
   }
 
-  constructor(private router: Router, private authservice: AuthService) {
-
-    console.log('userform', this.userGroup);
-  }
-
   register() {
-    if (!this.userGroup.valid) { return; }
-    const user = this.userGroup.getRawValue();
-    this.authservice.register(user).subscribe(s => this.router.navigate(['/login']));
+    if (!this.userForm.valid) {
+      return;
+    }
 
+    const user = this.userForm.getRawValue();
+    this.authService.register(user).subscribe(s => this.router.navigate(['/']));
   }
+
   get fullname() {
-    return this.userGroup.get(this.fullname);
+    return this.userForm.get('fullname');
   }
+
   get email() {
-    return this.userGroup.get(this.email);
+    return this.userForm.get('email');
   }
+
   get password() {
-    return this.userGroup.get(this.password);
+    return this.userForm.get('password');
   }
-  get repeatpassword() {
-    return this.userGroup.get(this.repeatpassword);
+
+  get repeatPassword() {
+    return this.userForm.get('repeatPassword');
   }
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
