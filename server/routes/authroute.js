@@ -7,9 +7,9 @@ const router = express.Router();
 router.post('/register', asyncHandler(insert));
 
 async function insert(req, res, next){
-    const user = req.bodyParser;
+    const user = req.body;
     console.log(`registering user`, user);
-    const saveuser = userController.insert(user);
+    const saveuser = await userController.insert(user);
     res.json(saveuser);
 }
 

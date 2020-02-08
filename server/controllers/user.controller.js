@@ -5,7 +5,8 @@ async function insert(user){
 // make a mongoose db call to save user in db
 
     console.log(`saving user to DB`, user);
-    return users.push(user);
+    users.push(user);
+    return user;
 }
 
 module.exports = {
