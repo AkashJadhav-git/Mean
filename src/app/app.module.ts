@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { AdminhomeModule } from './adminhome/adminhome.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminhomeModule } from './adminhome/adminhome.module';
     JobsModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminhomeModule
+    AdminhomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
