@@ -8,15 +8,15 @@ router.post('/register', asyncHandler(insert));
 router.post('/login', asyncHandler(getUserByEmailIdAndPassword));
 
 
-async function insert(req, res, next){
+async function insert(req, res, next) {
     const user = req.body;
     console.log(`registering user`, user);
     const saveuser = await userController.insert(user);
     res.json(saveuser);
 }
 
-async function getUserByEmailIdAndPassword(res, req, next){
-    let user = req.body;
+async function getUserByEmailIdAndPassword(res, req, next) {
+    const user = req.body;
     console.log('searching for data', user);
 
     const saveuser = await userController.getUserByEmailIdAndPassword(user.email, user.password);
