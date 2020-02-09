@@ -7,7 +7,7 @@
       <table cellspacing="0" class="full-width" [formGroup]="userForm">
         <tr>
           <td>
-            <mat-form-field class="full-width">
+            <mat-form-field class="full-width" >
               <input
                 name="fullname"
                 formControlName="fullname"
@@ -74,11 +74,15 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
+    <div align="center">
     <button mat-raised-button color="primary" (click)="register()">
       Register
     </button>
+    </div>
+    <div><br>
     <span class="left-spacer"
-      >Already have a account <a [routerLink]="['/login']">login</a> here</span
-    >
+      >Already have a account <a [routerLink]="['/login']"> login </a>  here 
+    </span>
+    </div>
   </mat-card-actions>
 </mat-card>

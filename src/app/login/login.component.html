@@ -7,23 +7,32 @@
   <mat-card-content>
     <form>
       <table class="fullwidth">
-      <tr><td>
-        <mat-form-field class="fullwidth">
-          <input matInput name="email" placeholder="Enter the email" [(ngModel)]="email" required/>
-        </mat-form-field>
-      </td></tr>
-      <tr>
-        <td>
-          <mat-form-field class="fullwidth">
-            <input matInput name="password" type="password" placeholder="Enter the password" [(ngModel)]="password" required/>
-          </mat-form-field>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput name="email" placeholder="Enter the email" [(ngModel)]="email" required />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput name="password" type="password" placeholder="Enter the password" [(ngModel)]="password"
+                required />
+            </mat-form-field>
+          </td>
+        </tr>
       </table>
     </form>
   </mat-card-content>
-  <mat-card-actions align ="center">
-    <button mat-raised-button color="primary" (click)="login()">Log In</button>
+  <mat-card-actions>
+    <div align="center">
+      <button mat-raised-button color="primary" (click)="login()">Log In</button>
+    </div>
+    <div>
+      <br>
+      <span>If don't have account <a [routerLink]="['/register']"
+          routerLinkActive="router-link-active"> Register </a> here. </span>
+    </div>
   </mat-card-actions>
-  <span>If don't have account <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>Click Here</span>
 </mat-card>
