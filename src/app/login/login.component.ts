@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
+  error: string;
 
   ngOnInit() {
 
@@ -21,7 +22,12 @@ export class LoginComponent implements OnInit {
 
   }
   login() {
-    this.authService.login(this.email, this.password).subscribe(s => this.router.navigate(['']));
+
+    this.error = ' ';
+    this.authService.login(this.email, this.password).subscribe(s => this.router.navigate(['']),
+   
+    e=>(this.error = e)
+    );
   }
 
 }

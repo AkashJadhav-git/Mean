@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of, Subject, throwError } from 'rxjs';
-import {switchMap, catchError} from 'rxjs/operators';
+import {switchMap, catchError, switchMapTo} from 'rxjs/operators';
 import { User } from './User';
 import { HttpClient } from '@angular/common/http';
 
@@ -15,26 +15,33 @@ export class AuthService {
   private apiurl = '/api/auth/';
   constructor(private httpClient:HttpClient) { }
 
-  login(email: string, password: string) {
-    return of({ email, password });
+  private setUser(user) {
+    this.user$.next(user);
   }
-
-  logout() {
-    this.setUser(null);
-    // const [routerLink] = "['/login']", routerLinkActive = 'router-link-active';
-    console.log('logged out.');
-  }
-
+ 
   get user() {
 
     return this.user$.asObservable();
   }
 
+  login(email: string, password: string) {
+    const loginCredentials = {email, password};
+    console.log(`Login credentials`, loginCredentials);
+    return this.httpClient.post<User> (`${this.apiurl}login`, loginCredentials).pipe(
+      switchMap(foundUser=>{
+        this.setUser(foundUser);
+        console.log(`user found`, foundUser);
+        return of(foundUser);
+      }),
+      catchError(e=>{
+        console.log(`server error occured`, e);
+        return throwError('Your login details could not be verified plaese try again.');
+      })
+    );
+  }
+
   register(user: any) {
-    // make api call to save in db and update the user subject.
-    // this.setUser(user);
-    // console.log('Registered user successfully', user);
-    // return of(user);
+   
     return this.httpClient.post(`${this.apiurl}register`, user).pipe(
       switchMap(savedUser => {
         this.setUser(savedUser);
@@ -46,10 +53,6 @@ export class AuthService {
         return throwError('Registration failed please contact the admin.');
       })
     );
-  }
-
-  private setUser(user) {
-    this.user$.next(user);
   }
 
 }
