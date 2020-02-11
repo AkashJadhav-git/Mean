@@ -15,10 +15,9 @@ async function insert(req, res, next) {
     res.json(saveuser);
 }
 
-async function getUserByEmailIdAndPassword(res, req, next) {
+async function getUserByEmailIdAndPassword(req, res, next) {
     const user = req.body;
-    console.log('searching for data', user);
-
+    console.log(`searching for data`, user);
     const saveuser = await userController.getUserByEmailIdAndPassword(user.email, user.password);
     res.json(saveuser);
 }

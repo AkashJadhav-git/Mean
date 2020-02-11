@@ -19,13 +19,13 @@ export class AuthService {
     this.user$.next(user);
   }
 
-  get user() {
+  get User() {
 
     return this.user$.asObservable();
   }
 
   login(email: string, password: string) {
-    const loginCredentials = { email, password };
+    const loginCredentials = { email: "sagarjadhav@gmail.com", password: "123" };
     console.log(`Login credentials`, loginCredentials);
     return this.httpClient.post<User>(`${this.apiurl}login`, loginCredentials).pipe(
       switchMap(foundUser => {
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   register(user: any) {
-
+    console.log(user)
     return this.httpClient.post(`${this.apiurl}register`, user).pipe(
       switchMap(savedUser => {
         this.setUser(savedUser);
