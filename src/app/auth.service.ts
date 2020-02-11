@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    const loginCredentials = { email: "sagarjadhav@gmail.com", password: "123" };
+    const loginCredentials = { email,  password};
     console.log(`Login credentials`, loginCredentials);
     return this.httpClient.post<User>(`${this.apiurl}login`, loginCredentials).pipe(
       switchMap(foundUser => {
