@@ -22,11 +22,6 @@ const routes: Routes = [
     component : RegisterComponent
   },
   {
-    path : 'adminhome',
-    pathMatch : 'full',
-    loadChildren : './adminhome/adminhome.module#AdminhomeModule'
-  },
-  {
     path : 'afterLogIn',
     component : DefaultComponent,
     children : [{
