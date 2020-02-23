@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { AdminhomeModule } from './adminhome/adminhome.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DefaultModule } from './layouts/default/default.module';
+import { DefaultComponent } from './layouts/default/default.component';
+import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    DefaultComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AdminhomeModule,
-    HttpClientModule
+    HttpClientModule,
+    DefaultModule
   ],
   providers: [],
   bootstrap: [AppComponent]

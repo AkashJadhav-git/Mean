@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
+import { DefaultComponent } from './layouts/default/default.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,15 @@ const routes: Routes = [
     path : 'adminhome',
     pathMatch : 'full',
     loadChildren : './adminhome/adminhome.module#AdminhomeModule'
+  },
+  {
+    path : 'afterLogIn',
+    component : DefaultComponent,
+    children : [{
+      path : '',
+      component : DashboardComponent
+    }]
+
   },
   {
   path : 'jobs',
