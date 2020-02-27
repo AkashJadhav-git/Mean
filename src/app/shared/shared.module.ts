@@ -17,6 +17,6 @@ import { AppModule } from '../app.module';
     CommonModule,
     AppModule
   ],
-  
+
 })
 export class SharedModule { }

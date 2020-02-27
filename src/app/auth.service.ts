@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   register(user: any) {
-    console.log(user)
+    console.log(user);
     return this.httpClient.post(`${this.apiurl}register`, user).pipe(
       switchMap(savedUser => {
         this.setUser(savedUser);

@@ -14,9 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
 import { DefaultModule } from './layouts/default/default.module';
 import { DefaultComponent } from './layouts/default/default.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +23,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     RegisterComponent,
     DashboardComponent,
     DefaultComponent,
-    HeaderComponent,
-    SidebarComponent,
-    FooterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,11 +34,9 @@ import { HeaderComponent } from './shared/components/header/header.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-   
+
   ],
-  exports:[
-    HeaderComponent
-  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

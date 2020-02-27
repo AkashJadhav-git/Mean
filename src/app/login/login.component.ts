@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
   }
   login() {
 
-    console.log(`data`, this.email, this.password)
+    console.log(`data`, this.email, this.password);
     this.error = ' ';
     this.authService.login(this.email, this.password).subscribe(s => this.router.navigate(['']),
-    
+
       e => (this.error = e)
     );
   }
