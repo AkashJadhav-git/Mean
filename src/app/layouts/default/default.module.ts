@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/adminhome/dashboard/dashboard.component';
@@ -16,6 +16,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     RouterModule,
     SharedModule
-  ]
+  ],
+  
 })
 export class DefaultModule { }

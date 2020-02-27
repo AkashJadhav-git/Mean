@@ -11,12 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DefaultModule } from './layouts/default/default.module';
-import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { DefaultModule } from './layouts/default/default.module';
 
 @NgModule({
   declarations: [
@@ -24,11 +20,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    DefaultComponent,
     DashboardComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +32,7 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DefaultModule
    
   ],
   providers: [],
