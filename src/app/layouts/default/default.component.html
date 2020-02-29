@@ -5,41 +5,7 @@
         </button>
 
         <span>Training and Placement </span>
-
-        <div fxFlex fxLayout = "row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="10px">
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>settings</mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
-        <div fxFlex fxLayout = "row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="10px">
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>help_outline</mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
-        <div fxFlex fxLayout = "row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="10px">
-                    <li>
-                        <button mat-button [matMenuTriggerFor]="menu">
-                            <mat-icon>person_outline</mat-icon>
-                        </button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item>
-                                <mat-icon>exit_to_app</mat-icon>
-                                Sign out
-                            </button>
-                        </mat-menu>
-                    </li>
-            </ul>
-        </div>
-        
+            
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container>
@@ -80,7 +46,7 @@
 <mat-drawer-content>
     <router-outlet></router-outlet>
 </mat-drawer-content>
-</mat-drawer-container><mat-divider></mat-divider>
+</mat-drawer-container>
 <footer>
     &copy; All rights reserved 2020
 </footer>
