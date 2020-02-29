@@ -11,9 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
 import { DefaultModule } from './layouts/default/default.module';
-import { DefaultComponent } from './layouts/default/default.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +20,6 @@ import { DefaultComponent } from './layouts/default/default.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
-    DefaultComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -34,7 +30,8 @@ import { DefaultComponent } from './layouts/default/default.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    DefaultModule,
+    SharedModule
   ],
 
   providers: [],
