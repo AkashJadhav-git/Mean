@@ -22,7 +22,7 @@ const routes: Routes = [
     component : RegisterComponent
   },
   {
-    path : 'afterLogIn',
+    path : 'admin',
     component : DefaultComponent,
     children : [{
       path : '',
