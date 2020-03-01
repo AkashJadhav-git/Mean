@@ -13,6 +13,7 @@ import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/AdminModules/dashboard/dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatCardModule } from '@angular/material/card';
+import { DashboardService } from 'src/app/AdminModules/dashboard.service';
 
 
 
@@ -36,6 +37,9 @@ import { MatCardModule } from '@angular/material/card';
     SharedModule,
     MatCardModule
   ],
+  providers: [
+    DashboardService
+  ]
 
 })
 export class DefaultModule { }
