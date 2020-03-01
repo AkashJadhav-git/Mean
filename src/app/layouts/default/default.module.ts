@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { FlexLayoutModule} from '@angular/flex-layout'
+import { FlexLayoutModule} from '@angular/flex-layout';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/AdminModules/dashboard/dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';

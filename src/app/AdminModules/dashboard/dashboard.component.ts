@@ -9,7 +9,6 @@ import { DashboardService } from '../dashboard.service';
 export class DashboardComponent implements OnInit {
   cards = [];
   pieChart = [];
-  
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
