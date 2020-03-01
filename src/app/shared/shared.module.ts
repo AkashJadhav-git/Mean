@@ -10,6 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { CardComponent } from './widgets/card/card.component';
+import { PieComponent } from './widgets/pie/pie.component';
+import { RouterModule } from '@angular/router';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 
 
@@ -17,7 +22,9 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    PieComponent
   ],
   imports: [
     CommonModule,
@@ -28,11 +35,15 @@ import { MatListModule } from '@angular/material/list';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
+    RouterModule,
+    HighchartsChartModule
   ],
   exports :[
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    PieComponent
   ]
 })
 export class SharedModule { }
