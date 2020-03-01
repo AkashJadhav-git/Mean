@@ -1,1 +1,24 @@
-<p>dashboard works!</p>
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <mat-card fxFlex="25">
+        <pm-card label="Total Users" total="12" percentage="50" [data]="cards"></pm-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <pm-card label="Total Internships" total="10" percentage="40" [data]="cards"></pm-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <pm-card label="Total Campus-Drives" total="8" percentage="30" [data]="cards"></pm-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <pm-card label="Total Placements" total="6" percentage="20" [data]="cards"></pm-card>
+    </mat-card>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>

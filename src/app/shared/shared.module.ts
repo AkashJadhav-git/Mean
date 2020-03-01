@@ -13,7 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { RouterModule } from '@angular/router';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsChartModule } from 'highcharts-angular'
 
 
 
@@ -35,8 +35,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
+    HighchartsChartModule,
     RouterModule,
-    HighchartsChartModule
   ],
   exports :[
     HeaderComponent,
