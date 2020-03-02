@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
 import { DefaultComponent } from './layouts/default/default.component';
+import { ChangepasswordComponent } from './Adminmodules/changepassword/changepassword.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,12 @@ const routes: Routes = [
     children : [{
       path : '',
       component : DashboardComponent
-    }]
+    },
+    {
+      path : 'change',
+      component : ChangepasswordComponent
+    }
+  ]
 
   },
   {

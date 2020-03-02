@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,

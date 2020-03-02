@@ -25,6 +25,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@syncfusion/ej2-angular-charts": "^17.4.47",
     "@syncfusion/ej2-angular-navigations": "^17.4.47",
     "bcrypt": "^3.0.8",
