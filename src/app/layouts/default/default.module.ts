@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DashboardService } from 'src/app/AdminModules/dashboard.service';
 import { ChangepasswordComponent } from 'src/app/Adminmodules/changepassword/changepassword.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material';
 
 
 
@@ -33,6 +34,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatIconModule,
     MatIconModule,
+    MatInputModule,
     MatButtonModule,
     MatMenuModule,
     MatListModule,
