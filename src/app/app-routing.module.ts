@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './AdminModules/dashboard/dashboard.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { ChangepasswordComponent } from './Adminmodules/changepassword/changepassword.component';
+import { PlacementComponent } from './Adminmodules/placement/placement.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
       path : 'change',
       component : ChangepasswordComponent
+    },
+    {
+      path : 'placement',
+      component : PlacementComponent
     }
   ]
 
