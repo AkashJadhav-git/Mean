@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatSelectModule} from '@angular/material';
 import { PlacementComponent } from 'src/app/Adminmodules/placement/placement.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CampusdrivesComponent } from 'src/app/AdminModules/campusdrives/campusdrives.component';
 
 
 
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     DefaultComponent,
     DashboardComponent,
     ChangepasswordComponent,
-    PlacementComponent
+    PlacementComponent,
+    CampusdrivesComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import { DashboardComponent } from './AdminModules/dashboard/dashboard.component
 import { DefaultComponent } from './layouts/default/default.component';
 import { ChangepasswordComponent } from './Adminmodules/changepassword/changepassword.component';
 import { PlacementComponent } from './Adminmodules/placement/placement.component';
+import { CampusdrivesComponent } from './AdminModules/campusdrives/campusdrives.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
     {
       path : 'change',
       component : ChangepasswordComponent
+    },
+    {
+      path : 'campus',
+      component : CampusdrivesComponent
     },
     {
       path : 'placement',
