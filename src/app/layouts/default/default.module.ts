@@ -16,8 +16,9 @@ import { MatCardModule } from '@angular/material/card';
 import { DashboardService } from 'src/app/AdminModules/dashboard.service';
 import { ChangepasswordComponent } from 'src/app/Adminmodules/changepassword/changepassword.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule} from '@angular/material';
+import { MatInputModule, MatSelectModule} from '@angular/material';
 import { PlacementComponent } from 'src/app/Adminmodules/placement/placement.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,12 +32,14 @@ import { PlacementComponent } from 'src/app/Adminmodules/placement/placement.com
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
     MatSidenavModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     MatMenuModule,
     MatListModule,
